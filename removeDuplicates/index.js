@@ -26,5 +26,15 @@ function removeDuplicates(str) {
   return arr.filter((item, index) => arr.indexOf(item) === index).join(" ");
 }
 
+// Using reduce
+function removeDuplicates(str) {
+  const arr = str.split(" ");
+  return arr
+    .reduce((unique, item) => {
+      return unique.includes(item) ? unique : [...unique, item];
+    }, [])
+    .join(" ");
+}
+
 const str = "This is is a test test string";
 console.log(removeDuplicates(str)); // 'This is a test string'
