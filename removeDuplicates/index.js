@@ -20,6 +20,7 @@
 //   return Object.keys(unique).join(" ");
 // }
 
+// Using filter and indexOf
 function removeDuplicates(str) {
   const arr = str.split(" ");
   return arr.filter((item, index) => arr.indexOf(item) === index).join(" ");
