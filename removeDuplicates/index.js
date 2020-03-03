@@ -12,12 +12,17 @@
 // }
 
 // Using Object hash
+// function removeDuplicates(str) {
+//   let unique = {};
+//   str.split(" ").forEach(el => {
+//     if (!unique[el]) unique[el] = true;
+//   });
+//   return Object.keys(unique).join(" ");
+// }
+
 function removeDuplicates(str) {
-  let unique = {};
-  str.split(" ").forEach(el => {
-    if (!unique[el]) unique[el] = true;
-  });
-  return Object.keys(unique).join(" ");
+  const arr = str.split(" ");
+  return arr.filter((item, index) => arr.indexOf(item) === index).join(" ");
 }
 
 const str = "This is is a test test string";
