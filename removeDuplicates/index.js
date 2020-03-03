@@ -5,9 +5,19 @@
  const str = 'This is is a test test string';
  removeDuplicates(str); // 'This is a test string'
  */
+
 // Using Set
+// function removeDuplicates(str) {
+//   return [...new Set(str.split(" "))].join(" ");
+// }
+
+// Using Object hash
 function removeDuplicates(str) {
-  return [...new Set(str.split(" "))].join(" ");
+  let unique = {};
+  str.split(" ").forEach(el => {
+    if (!unique[el]) unique[el] = true;
+  });
+  return Object.keys(unique).join(" ");
 }
 
 const str = "This is is a test test string";
