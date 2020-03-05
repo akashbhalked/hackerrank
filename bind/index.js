@@ -20,3 +20,9 @@ const foo = function() {
 };
 let baz = foo.bind({ bar: "hello" });
 baz(); // Hello
+
+// function bind(fn, context) {
+//   return function() {
+//     fn.apply(context);
+//   };
+// }
